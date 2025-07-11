@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Leaf - All Products</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#2C5545',secondary:'#E9B75F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        input:focus {
+            outline: none;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark {
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #2C5545;
+            border-color: #2C5545;
+        }
+        .checkmark:after {
+            content: "";
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .price-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 5px;
+            outline: none;
+        }
+        .price-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2C5545;
+            cursor: pointer;
+        }
+        .price-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2C5545;
+            cursor: pointer;
+            border: none;
+        }
+        .custom-radio {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .custom-radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .radio-mark {
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-radio input:checked ~ .radio-mark {
+            border-color: #2C5545;
+        }
+        .radio-mark:after {
+            content: "";
+            display: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2C5545;
+        }
+        .custom-radio input:checked ~ .radio-mark:after {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Bar -->
+    <div class="bg-primary text-white text-center py-2 text-sm">
+        Free shipping on orders over $50 | Use code TEATIME for 10% off your first order
+    </div>
+
+    <!-- Header -->
+    <header class="border-b border-gray-100 sticky top-0 bg-white z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Left Navigation -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-primary font-medium hover:text-primary transition-colors">Shop</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
+            </nav>
+
+            <!-- Logo -->
+            <a href="#" class="font-['Pacifico'] text-2xl text-primary">logo</a>
+
+            <!-- Right Navigation -->
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+                <div class="hidden md:flex items-center relative">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm w-40 focus:w-60 transition-all duration-300">
+                    <div class="absolute left-3 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+
+                <!-- Account -->
+                <div class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                    <i class="ri-user-line"></i>
+                </div>
+
+                <!-- Cart -->
+                <div class="relative w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                    <i class="ri-shopping-bag-line"></i>
+                    <span class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="w-10 h-10 flex items-center justify-center text-gray-700 md:hidden cursor-pointer">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center text-sm text-gray-500">
+                <a href="#" class="hover:text-primary">Home</a>
+                <span class="mx-2">/</span>
+                <a href="#" class="hover:text-primary">Shop</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-900">All Products</span>
+                <a href="https://readdy.ai/home/1215cda4-fada-41a5-81ab-e830218f01df/d9ab1d6c-dad4-4a87-b741-c7bfdf9443b6" data-readdy="true" class="ml-auto text-primary flex items-center">
+                    <i class="ri-arrow-left-line mr-1"></i>
+                    Back to Featured Products
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Sidebar Filters - Desktop -->
+            <div class="hidden md:block w-64 flex-shrink-0">
+                <div class="bg-white rounded-lg shadow-sm p-6 sticky top-24">
+                    <div class="mb-6">
+                        <h3 class="font-bold text-lg mb-4">Categories</h3>
+                        <div class="space-y-3">
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox" checked>
+                                <span class="checkmark mr-3"></span>
+                                <span>All Categories</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Black Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(24)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Green Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(18)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Herbal Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(12)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Flavored Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(15)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Instant Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(8)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6 mb-6">
+                        <h3 class="font-bold text-lg mb-4">Price Range</h3>
+                        <div class="mb-4">
+                            <input type="range" min="0" max="100" value="75" class="price-slider" id="priceRange">
+                            <div class="flex justify-between mt-2 text-sm text-gray-600">
+                                <span>$0</span>
+                                <span>$<span id="priceValue">75</span></span>
+                                <span>$100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6 mb-6">
+                        <h3 class="font-bold text-lg mb-4">Rating</h3>
+                        <div class="space-y-3">
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="rating" checked>
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="rating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="rating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="rating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="rating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded !rounded-button whitespace-nowrap">Clear All Filters</button>
+                </div>
+            </div>
+
+            <!-- Mobile Filter Button -->
+            <div class="md:hidden mb-4">
+                <button class="w-full bg-white border border-gray-200 text-gray-800 py-3 px-4 rounded-lg flex items-center justify-center !rounded-button whitespace-nowrap" id="mobileFilterBtn">
+                    <i class="ri-filter-3-line mr-2"></i>
+                    Filter Products
+                </button>
+            </div>
+
+            <!-- Mobile Filter Drawer -->
+            <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="filterDrawer">
+                <div class="absolute right-0 top-0 bottom-0 w-80 bg-white p-6 overflow-y-auto">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-lg">Filters</h3>
+                        <button id="closeFilterBtn" class="w-8 h-8 flex items-center justify-center text-gray-500">
+                            <i class="ri-close-line text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-bold text-lg mb-4">Categories</h3>
+                        <div class="space-y-3">
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox" checked>
+                                <span class="checkmark mr-3"></span>
+                                <span>All Categories</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Black Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(24)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Green Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(18)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Herbal Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(12)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Flavored Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(15)</span>
+                            </label>
+                            <label class="custom-checkbox flex items-center">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span>Instant Tea</span>
+                                <span class="ml-auto text-gray-500 text-sm">(8)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6 mb-6">
+                        <h3 class="font-bold text-lg mb-4">Price Range</h3>
+                        <div class="mb-4">
+                            <input type="range" min="0" max="100" value="75" class="price-slider" id="mobilePriceRange">
+                            <div class="flex justify-between mt-2 text-sm text-gray-600">
+                                <span>$0</span>
+                                <span>$<span id="mobilePriceValue">75</span></span>
+                                <span>$100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6 mb-6">
+                        <h3 class="font-bold text-lg mb-4">Rating</h3>
+                        <div class="space-y-3">
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="mobileRating" checked>
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="mobileRating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="mobileRating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="mobileRating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                            <label class="custom-radio flex items-center">
+                                <input type="radio" name="mobileRating">
+                                <span class="radio-mark mr-3"></span>
+                                <div class="flex text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <i class="ri-star-line"></i>
+                                    <span class="ml-2 text-gray-700">& Up</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-6">
+                        <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-3 px-4 rounded !rounded-button whitespace-nowrap">Apply Filters</button>
+                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 px-4 rounded !rounded-button whitespace-nowrap">Clear All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Content -->
+            <div class="flex-1">
+                <!-- Page Title -->
+                <div class="mb-6">
+                    <h1 class="text-3xl font-bold mb-2">All Products</h1>
+                    <p class="text-gray-600">Discover our premium tea collection, sourced from the finest estates around the world.</p>
+                </div>
+
+                <!-- Control Bar -->
+                <div class="bg-white rounded-lg shadow-sm p-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-gray-600">
+                        Showing <span class="font-medium">77</span> products
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex items-center">
+                            <label class="text-sm text-gray-600 mr-2">Sort by:</label>
+                            <div class="relative">
+                                <select class="appearance-none bg-gray-50 border border-gray-200 rounded py-2 pl-4 pr-10 text-sm focus:outline-none">
+                                    <option>Newest</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Most Popular</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center border-l border-gray-200 pl-4">
+                            <button class="w-8 h-8 flex items-center justify-center text-primary bg-gray-50 rounded">
+                                <i class="ri-grid-fill"></i>
+                            </button>
+                            <button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary">
+                                <i class="ri-list-check"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center border-l border-gray-200 pl-4">
+                            <label class="text-sm text-gray-600 mr-2">Show:</label>
+                            <div class="relative">
+                                <select class="appearance-none bg-gray-50 border border-gray-200 rounded py-2 pl-3 pr-8 text-sm focus:outline-none">
+                                    <option>12</option>
+                                    <option>24</option>
+                                    <option>36</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/20b125c181b265d12adaf3e398807646.jpg" alt="Premium Assam Black Tea" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded">BESTSELLER</div>
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Black Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Premium Assam Black Tea</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">128 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$18.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/3f2349dd285a63b126f19a4c69090dfc.jpg" alt="Darjeeling Green Tea" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Green Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Darjeeling Green Tea</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">96 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$22.50</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/d380738ed778a1a7870d9ddd39630412.jpg" alt="Jasmine Infusion Tea" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded">NEW</div>
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Flavored Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Jasmine Infusion Tea</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="text-gray-500 text-xs ml-2">42 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$24.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/6a9cef62eb589893b9de8e6b6fd712d3.jpg" alt="Masala Chai Blend" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Flavored Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Masala Chai Blend</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">215 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$19.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/5f3a9d7e8c1a4b6f9e2d7c8b5a3f1e0d.jpg" alt="Earl Grey Supreme" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Black Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Earl Grey Supreme</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="text-gray-500 text-xs ml-2">87 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$21.50</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p.jpg" alt="Chamomile Blossoms" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded">ORGANIC</div>
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Herbal Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Chamomile Blossoms</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">156 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$17.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6.jpg" alt="Ceremonial Matcha" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded">PREMIUM</div>
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Green Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Ceremonial Matcha</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">124 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$29.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6.jpg" alt="Instant Lemon Tea" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Instant Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Instant Lemon Tea</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="text-gray-500 text-xs ml-2">62 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$15.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r1t2y3u4i5.jpg" alt="Silver Needle White Tea" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded">RARE</div>
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">White Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Silver Needle White Tea</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">48 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$34.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/o1p2a3s4d5f6g7h8j9k0l1z2x3c4v5.jpg" alt="Pure Peppermint" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Herbal Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Pure Peppermint</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="text-gray-500 text-xs ml-2">92 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$16.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 11 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/m1n2b3v4c5x6z7l8k9j0h1g2f3d4s5.jpg" alt="Iron Goddess Oolong" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Oolong Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Iron Goddess Oolong</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <span class="text-gray-500 text-xs ml-2">76 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$26.95</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 12 -->
+                    <div class="group bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="relative overflow-hidden">
+                            <img src="https://public.readdy.ai/ai/img_res/a9s8d7f6g5h4j3k2l1p0o9i8u7y6t5r4e3w2q1.jpg" alt="Vanilla Rooibos" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded">ORGANIC</div>
+                            <div class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer">
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="flex-1 bg-primary hover:bg-opacity-90 text-white py-2 rounded-full text-sm font-medium !rounded-button whitespace-nowrap">Add to Cart</button>
+                                <button class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full shadow-lg">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-1">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Herbal Tea</span>
+                            </div>
+                            <h3 class="font-medium text-gray-900 mb-1">Vanilla Rooibos</h3>
+                            <div class="flex text-yellow-400 mb-2 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                                <span class="text-gray-500 text-xs ml-2">104 reviews</span>
+                            </div>
+                            <p class="font-medium text-primary">$18.50</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12">
+                    <nav class="flex items-center">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors mr-2">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white mr-2">1</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors mr-2">2</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors mr-2">3</a>
+                        <span class="mx-2 text-gray-500">...</span>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors mr-2">7</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="font-['Pacifico'] text-2xl text-white mb-6 block">logo</a>
+                    <p class="text-gray-400 mb-6">Premium tea sourced from the finest estates around the world, delivered to your doorstep since 1963.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shop All</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Customer Service</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Track Your Order</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">123 Tea Garden Road, Assam, India 781001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+91 1234 567 890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@pureleaftea.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Pure Leaf Tea. All rights reserved.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-visa-fill text-2xl text-gray-400"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-paypal-fill text-2xl text-gray-400"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-amazon-pay-fill text-2xl text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="fixed bottom-20 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity duration-300 hover:bg-opacity-90">
+        <i class="ri-arrow-up-line text-xl"></i>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('button.fixed.bottom-20');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Price range slider
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        const mobilePriceRange = document.getElementById('mobilePriceRange');
+        const mobilePriceValue = document.getElementById('mobilePriceValue');
+        
+        if (priceRange && priceValue) {
+            priceRange.addEventListener('input', () => {
+                priceValue.textContent = priceRange.value;
+            });
+        }
+        
+        if (mobilePriceRange && mobilePriceValue) {
+            mobilePriceRange.addEventListener('input', () => {
+                mobilePriceValue.textContent = mobilePriceRange.value;
+            });
+        }
+
+        // Mobile filter drawer
+        const mobileFilterBtn = document.getElementById('mobileFilterBtn');
+        const filterDrawer = document.getElementById('filterDrawer');
+        const closeFilterBtn = document.getElementById('closeFilterBtn');
+        
+        if (mobileFilterBtn && filterDrawer && closeFilterBtn) {
+            mobileFilterBtn.addEventListener('click', () => {
+                filterDrawer.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeFilterBtn.addEventListener('click', () => {
+                filterDrawer.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+            
+            filterDrawer.addEventListener('click', (e) => {
+                if (e.target === filterDrawer) {
+                    filterDrawer.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
